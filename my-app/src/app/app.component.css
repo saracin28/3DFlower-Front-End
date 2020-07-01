@@ -1,15 +1,8 @@
-.header {
-  display: inline-block;
-}
 
 .comp1 {
   font-size: 25px;
   text-align: left;
   height: auto;
-}
-
-.container {
-  display: inline-block;
 }
 
 .login {
@@ -35,11 +28,14 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15%;
+  width: 100%;
   background-color: #f1f1f1;
   height: 100%;
-  position: fixed;
-  overflow: auto;
+
+}
+
+.container2{
+  float: left;
 }
 
 li .button {
@@ -59,12 +55,12 @@ li .button:hover {
   display: block;
 }
 
-
 .main {
   width: 85%;
   padding: 1px 16px;
   height: 1000px;
-  display: inline-block;
+  overflow: hidden;
+  text-align: center;
 }
 
 
