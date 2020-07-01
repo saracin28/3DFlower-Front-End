@@ -1,34 +1,71 @@
-.comp1{
-  color: black;
+.header {
+  display: inline-block;
+}
+
+.comp1 {
   font-size: 25px;
   text-align: left;
-  padding: 30px;
-  font-family: "Book Antiqua";
-  color: brown;
+  height: auto;
 }
 
-.comp2{
-  color: black;
+.container {
+  display: inline-block;
+}
+
+.login {
+  text-align: right;
+  display: inline-block;
+  margin-left: 50%;
+}
+
+.comp2 {
   font-size: 20px;
-  font-color: lightblue;
   text-align: left;
 }
 
-.s1, .s2{
+.s1, .s2 {
   text-align: center;
 }
-.container{
-  text-align: right;
-}
-.s3{
+
+.s3 {
   margin-right: 100px;
 }
 
-
-li{
-   height: 30px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
 }
 
-nav{
+li .button {
+  color: #000;
+  padding: 20px 20px;
+  border-bottom: 1px solid;
+  display: block;
+  font-size: 20px;
+  border-bottom: 1px solid;
+  text-decoration: none;
+  background-color: antiquewhite;
+}
+
+li .button:hover {
+  background-color: #555;
+  color: white;
   display: block;
 }
+
+
+.main {
+  width: 85%;
+  padding: 1px 16px;
+  height: 1000px;
+  display: inline-block;
+}
+
+
+

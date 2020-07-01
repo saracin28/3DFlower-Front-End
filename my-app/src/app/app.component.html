@@ -1,21 +1,32 @@
-<p class="comp1" >3D<span>Flowers</span></p>
-<p class="comp2">Welcome to our scented land</p>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="container">
-<input class="s1" type="text" name="email" placeholder="email" ngModel>
-<br/>
-<input class="s2" type="password" name="password" placeholder="password" ngModel>
-<br/>
-<input class="s3" type="submit" value="SUBMIT">
+<div class="header">
+  <div style="display: inline-block">
+    <p class="comp1">3D<span>Flowers</span></p>
+    <p class="comp2">Welcome to our scented land</p>
+  </div>
+  <div class="container">
+    <input class="s1" type="text" name="email" placeholder="email">
+    <br/>
+    <input class="s2" type="password" name="password" placeholder="password">
+    <br/>
+    <input class="s3" type="submit" value="SUBMIT">
+  </div>
 </div>
-
-<nav>
-<ul>
-<li><a href="default.asp" class="comp3">Home</a></li>
-<li><a href="default.asp" class="comp4">Our Products</a></li>
-<li><a href="flowers.asp" class="comp5" >Flowers</a></li>
-<li><a href="pots.asp" class="comp6">Pots</a></li>
-<li><a href="accessories.asp" class="comp7">Accessories</a></li>
-</ul>
-</nav>
-
+<div class="container2">
+  <div >
+    <nav class="vertical-nav">
+      <ul>
+        <li><a type="button" class="button" routerLink="/home" ><i class="fa fa-fw fa-home"></i>Home</a></li>
+        <li><a type="button" class="button" routerLink="/products" >Our Products</a></li>
+        <li><a type="button" class="button" routerLink="/flowers" >Flowers</a></li>
+        <li><a type="button" class="button" routerLink="/pot">Pots</a></li>
+        <li><a type="button" class="button" routerLink="/accessories" >Accessories</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
