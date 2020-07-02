@@ -8,7 +8,8 @@ import {PotComponent} from "./components/pot/pot.component";
 const routes: Routes = [
   {path:"accessories",component:AccessoriesComponent},
   {path:"flowers",component:FlowersComponent},
-  {path:"pot",component:PotComponent}];
+  {path:"pot",component:PotComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
