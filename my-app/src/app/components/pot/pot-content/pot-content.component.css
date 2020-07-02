@@ -1,0 +1,12 @@
+.content{
+  border: 2px solid;
+  display: inline-block;
+
+}
+.content ul{
+  list-style-type: none;
+}
+.content li{
+  margin-right: 20px;
+}
+
