@@ -2,26 +2,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="header">
+<div class="nav-horizontal">
+    <a type="button" class="button-nav-horizontal" routerLink="/login"><i class="fa fa-fw fa-user"></i></a>
+    <a type="button" class="button-nav-horizontal" routerLink="/home"><i class="fa fa-fw fa-home"></i></a>
+    <a type="button" class="button-nav-horizontal" routerLink="/cart"><i class="fa fa-shopping-cart"></i></a>
+</div>
+  <div class="search-container">
+    <form>
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
 
-    <div class="search-container">
-      <form>
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-      </form>
-    </div>
-  <ul>
-    <li><a type="button" class="login" routerLink="/login"><i class="fa fa-fw fa-user">Login</i></a></li>
-  </ul>
-<!--    <input class="s1" type="text" name="email" placeholder="email">-->
-<!--    <br/>-->
-<!--    <input class="s2" type="password" name="password" placeholder="password">-->
-<!--    <br/>-->
-<!--    <input class="s3" type="submit" value="SUBMIT">-->
+
+  <!--    <input class="s1" type="text" name="email" placeholder="email">-->
+  <!--    <br/>-->
+  <!--    <input class="s2" type="password" name="password" placeholder="password">-->
+  <!--    <br/>-->
+  <!--    <input class="s3" type="submit" value="SUBMIT">-->
 
 </div>
 <nav class="container2">
   <ul>
-    <li><a type="button" class="button" routerLink="/home"><i class="fa fa-fw fa-home"></i>Home</a></li>
+
     <li><a type="button" class="button" routerLink="/products">Our Products</a></li>
     <li><a type="button" class="button" routerLink="/flowers">Flowers</a></li>
     <li><a type="button" class="button" routerLink="/pot">Pots</a></li>
