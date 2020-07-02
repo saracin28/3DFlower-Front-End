@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import{PotType} from '../../../types/PotType';
+import{PotsType} from '../../../types/PotsType';
 
 @Component({
   selector: 'app-pot-content',
@@ -7,7 +7,7 @@ import{PotType} from '../../../types/PotType';
   styleUrls: ['./pot-content.component.css']
 })
 export class PotContentComponent implements OnInit {
-@Input() pot: PotType;
+@Input() pot: PotsType;
   constructor() { }
 
   ngOnInit(): void {
