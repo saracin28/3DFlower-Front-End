@@ -10,10 +10,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { OurProductsComponent } from './components/our-products/our-products.component';
 import { CartComponent } from './components/cart/cart.component';
+<<<<<<< HEAD
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+=======
 import { AccessoriesComponent } from './components/accessories/accessories.component';
 import { FlowersComponent } from './components/flowers/flowers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from "@angular/material/slider";
+>>>>>>> 238be92bbd029d01d025ade2047ab7184b02cf5b
 
 @NgModule({
   declarations: [
@@ -32,8 +36,12 @@ import {MatSliderModule} from "@angular/material/slider";
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
+    BrowserAnimationsModule
+=======
     BrowserAnimationsModule,
     MatSliderModule
+>>>>>>> 238be92bbd029d01d025ade2047ab7184b02cf5b
   ],
   providers: [],
   bootstrap: [AppComponent]
