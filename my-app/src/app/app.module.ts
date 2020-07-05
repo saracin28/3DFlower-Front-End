@@ -14,6 +14,10 @@ import { AccessoriesComponent } from './components/accessories/accessories.compo
 import { FlowersComponent } from './components/flowers/flowers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
+import { FlowerContentComponent } from './components/flowers/flower-content/flower-content.component';
+import { PotSummaryComponent } from './components/pot/pot-content/pot-summary/pot-summary.component';
+import {HttpServiceService} from "./services/http/http-service.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,15 +31,18 @@ import {MatSliderModule} from '@angular/material/slider';
     CartComponent,
     AccessoriesComponent,
     FlowersComponent,
+    FlowerContentComponent,
+    PotSummaryComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

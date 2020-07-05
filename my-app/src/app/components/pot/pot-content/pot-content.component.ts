@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import{PotsType} from '../../../types/PotsType';
+import {HttpServiceService} from "../../../services/http/http-service.service";
 
 @Component({
   selector: 'app-pot-content',
@@ -8,9 +9,12 @@ import{PotsType} from '../../../types/PotsType';
 })
 export class PotContentComponent implements OnInit {
 @Input() pot: PotsType;
+
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
 
 }
