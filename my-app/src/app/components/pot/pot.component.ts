@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PotsType} from '../../types/PotsType';
+import {HttpServiceService} from "../../services/http/http-service.service";
 
 @Component({
   selector: 'app-pot',
@@ -9,12 +10,11 @@ import {PotsType} from '../../types/PotsType';
 export class PotComponent implements OnInit {
   @Input() pots: PotsType[];
 
-  constructor() {
+  constructor(private httpService: HttpServiceService) {
   }
 
   ngOnInit(): void {
-    this.pots = [{name: "Circular Pot", price: 20, description: "Can add up to 5 flowers", image: "No image"},
-      {name: "Box Pot", price: 25, description: "Can add up to 10 flowers", image: "No image"}]
+    this.httpService.getPots().subscribe(x => this.pots = x);
   }
 
 }
