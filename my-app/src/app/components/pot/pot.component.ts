@@ -17,4 +17,5 @@ export class PotComponent implements OnInit {
     this.httpService.getPots().subscribe(x => this.pots = x);
   }
 
+
 }

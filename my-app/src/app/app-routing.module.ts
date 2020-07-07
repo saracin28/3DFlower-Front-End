@@ -8,7 +8,7 @@ import {RegisterComponent} from "./components/register/register.component";
 import {OurProductsComponent} from "./components/our-products/our-products.component";
 import {CartComponent} from "./components/cart/cart.component";
 import {LoginComponent} from "./components/login/login.component";
-import {PotSummaryComponent} from "./components/pot/pot-content/pot-summary/pot-summary.component";
+import {PotContentComponent} from "./components/pot/pot-content/pot-content.component";
 
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:"cart",component:CartComponent},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"pot/pot-summary",component:PotSummaryComponent},
+  {path:"pot/pot-content",component:PotContentComponent},
   {path:"",component:HomeComponent},
 ];
 

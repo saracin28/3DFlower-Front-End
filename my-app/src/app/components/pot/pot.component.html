@@ -1,3 +1,13 @@
-<app-pot-content *ngFor="let p of pots" [pot]="p"></app-pot-content>
+<div routerLink="pot-content" class="content" *ngFor="let p of pots">
+  <nav>
+    <ul>
+      <li>Name: {{p.name}}</li>
+      <li>Price: {{p.price}}lei</li>
+      <li>Description: {{p.description}}</li>
+    </ul>
+  </nav>
+</div>
+
+
 
 
