@@ -10,10 +10,9 @@ import {HttpServiceService} from "../../../services/http/http-service.service";
 export class PotContentComponent implements OnInit {
 @Input() pot: PotsType;
 
-  constructor() { }
+  constructor(private httpService: HttpServiceService) { }
 
   ngOnInit(): void {
-
 
   }
 

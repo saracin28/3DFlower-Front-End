@@ -1,0 +1,21 @@
+.content {
+  display: inline-block;
+  margin-left: 70px;
+  border: 2px solid;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.content:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.2s;
+}
+
+.content ul {
+  list-style-type: none;
+}
+
+
+

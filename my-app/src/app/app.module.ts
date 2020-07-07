@@ -15,13 +15,13 @@ import { FlowersComponent } from './components/flowers/flowers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import { FlowerContentComponent } from './components/flowers/flower-content/flower-content.component';
+
 import { PotSummaryComponent } from './components/pot/pot-content/pot-summary/pot-summary.component';
 import {HttpServiceService} from './services/http/http-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
 import { CustomMaterialModule } from './material.module';
 import {FormsModule} from '@angular/forms';
-
 
 
 @NgModule({
@@ -37,8 +37,6 @@ import {FormsModule} from '@angular/forms';
     AccessoriesComponent,
     FlowersComponent,
     FlowerContentComponent,
-    PotSummaryComponent,
-    UserComponent,
 
   ],
   imports: [
