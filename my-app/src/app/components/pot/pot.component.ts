@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {PotsType} from '../../types/PotsType';
-import {HttpServiceService} from "../../services/http/http-service.service";
+import {HttpServiceService} from '../../services/http/http-service.service';
 
 @Component({
   selector: 'app-pot',
