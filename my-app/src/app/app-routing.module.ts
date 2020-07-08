@@ -9,7 +9,6 @@ import {RegisterComponent} from './components/register/register.component';
 import {OurProductsComponent} from './components/our-products/our-products.component';
 import {CartComponent} from './components/cart/cart.component';
 import {LoginComponent} from './components/login/login.component';
-import {PotSummaryComponent} from './components/pot/pot-content/pot-summary/pot-summary.component';
 import {UserComponent} from './components/user/user.component';
 
 const routes: Routes = [
@@ -20,7 +19,6 @@ const routes: Routes = [
   {path: 'our-products', component: OurProductsComponent},
   {path: 'cart', component: CartComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'pot/pot-summary', component: PotSummaryComponent},
   {path: '', component: HomeComponent},
   {path: 'user', component: UserComponent},
   {path: 'login', component: LoginComponent},
