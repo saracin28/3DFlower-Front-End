@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
   password: any;
-  Confirm_password: any;
+  ConfirmPassword: any;
   username: any;
   showSpinner: any;
   email: any;
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register():void {
+  register(): void {
 
   }
 }
