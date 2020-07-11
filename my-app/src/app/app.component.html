@@ -2,31 +2,30 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="header">
-<div class="nav-horizontal">
-    <a type="button" class="button-nav-horizontal" routerLink="/login"><i class="fa fa-fw fa-user"></i></a>
-    <a type="button" class="button-nav-horizontal" routerLink="/home"><i class="fa fa-fw fa-home"></i></a>
-  <div class="cart">
-    <a type="button" class="button-nav-horizontal" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
-    <div class="cart-drop">
-      <p>Works</p>
-    </div></a>
+  <div style="display: inline-block">
+    <img routerLink="home" class="emblem" src="assets/images/3DFlower.png" alt="emblem">
   </div>
-</div>
-  <div class="search-container">
-    <form>
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-    </form>
+    <div class="nav-horizontal">
+      <a type="button" class="button-nav-horizontal" routerLink="/login"><i class="fa fa-fw fa-user"></i></a>
+      <a type="button" class="button-nav-horizontal" routerLink="/home"><i class="fa fa-fw fa-home"></i></a>
+      <div class="cart">
+        <a type="button" class="button-nav-horizontal" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
+          <div class="cart-drop">
+            <p>Works</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="search-container">
+      <form>
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
   </div>
 
 
-  <!--    <input class="s1" type="text" name="email" placeholder="email">-->
-  <!--    <br/>-->
-  <!--    <input class="s2" type="password" name="password" placeholder="password">-->
-  <!--    <br/>-->
-  <!--    <input class="s3" type="submit" value="SUBMIT">-->
 
-</div>
 <nav class="container2">
   <ul>
     <li><a type="button" class="button" routerLink="/our-products">Our Products</a></li>
