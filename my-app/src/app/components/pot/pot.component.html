@@ -2,13 +2,11 @@
   <a [routerLink]="['/pot/pot-content', p.id]">
     <div class="content">
       <ul>
+        <li><img src="{{p.image}}" width="50px" height="50px"></li>
         <li>Name: {{p.name}}</li>
         <li>Price: {{p.price}}lei</li>
         <li>Description: {{p.description}}</li>
-        <li><img src="../assets/images/descărcare.jpg" width="30px" height="30px"></li>
       </ul>
     </div>
   </a>
 </div>
-
-

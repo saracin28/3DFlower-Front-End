@@ -6,7 +6,7 @@
   width: 200px;
   cursor: pointer;
   border-radius: 20px;
-
+  color: black;
 }
 
 .content:hover{

@@ -5,6 +5,7 @@ import {Observable, Observer, of} from "rxjs";
 import {FlowersType} from "../../types/FlowersType";
 import {catchError, tap} from "rxjs/operators";
 import {PotsType} from "../../types/PotsType";
+import {AccessoriesType} from "../../types/AccessoriesType";
 
 
 @Injectable({
@@ -14,6 +15,7 @@ export class HttpServiceService {
 
   private url1 = "http://localhost:8080/flower";
   private url2 = "http://localhost:8080/pot";
+  private url3 = "http://localhost:8080/accessories";
 
 
   constructor(private httpClient: HttpClient) {
@@ -55,5 +57,19 @@ export class HttpServiceService {
     );
   }
 
+  public getAccessories(): Observable<AccessoriesType[]> {
+    return this.httpClient.get<AccessoriesType[]>(this.url3).pipe(
+      tap(() => console.log("Fetch Accessories")),
+      catchError(this.handleError<AccessoriesType[]>("getAccessories", [])));
+  }
+
+  public getAccessor(id: number): Observable<AccessoriesType> {
+    const url = `${this.url3}/${id}`;
+    console.log(url);
+    return this.httpClient.get<AccessoriesType>(url).pipe(
+      tap(_ => console.log(`fetched accessor id=${id}`)),
+      catchError(this.handleError<AccessoriesType>(`getAccessor id=${id}`))
+    );
+  }
 
 }

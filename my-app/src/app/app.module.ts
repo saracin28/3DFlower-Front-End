@@ -20,6 +20,7 @@ import {HttpServiceService} from './services/http/http-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
 import {FormsModule} from '@angular/forms';
+import { AccessoriesContentComponent } from './components/accessories/accessories-content/accessories-content.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {FormsModule} from '@angular/forms';
     AccessoriesComponent,
     FlowersComponent,
     FlowerContentComponent,
+    AccessoriesContentComponent,
 
   ],
   imports: [

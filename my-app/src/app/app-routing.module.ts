@@ -12,6 +12,7 @@ import {LoginComponent} from './components/login/login.component';
 import {UserComponent} from './components/user/user.component';
 import {PotContentComponent} from "./components/pot/pot-content/pot-content.component";
 import {FlowerContentComponent} from "./components/flowers/flower-content/flower-content.component";
+import {AccessoriesContentComponent} from "./components/accessories/accessories-content/accessories-content.component";
 
 const routes: Routes = [
   {path: 'accessories', component: AccessoriesComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'pot/pot-content/:id', component: PotContentComponent},
   {path: 'flower/flower-content/:id', component: FlowerContentComponent},
+  {path: 'accessories/accessories-content/:id', component: AccessoriesContentComponent},
   {path: '', component: HomeComponent}
 ];
 

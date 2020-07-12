@@ -71,7 +71,7 @@
   display: block;
   font-size: 20px;
   text-decoration: none;
-  background-color: antiquewhite;
+  background-color: green;
 }
 
 .button:hover {
@@ -85,6 +85,7 @@
   display: inline-block;
   vertical-align: top;
   margin-top: 20px;
+
 }
 
 .cart {
@@ -110,5 +111,4 @@
   width: 200px;
   height: 100px;
   cursor: pointer;
-
 }
