@@ -1,3 +1,4 @@
+
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, Observer, of} from "rxjs";
@@ -5,12 +6,15 @@ import {FlowersType} from "../../types/FlowersType";
 import {catchError, tap} from "rxjs/operators";
 import {PotsType} from "../../types/PotsType";
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class HttpServiceService {
+
   private url1 = "http://localhost:8080/flower";
   private url2 = "http://localhost:8080/pot";
+
 
   constructor(private httpClient: HttpClient) {
   }
@@ -21,6 +25,7 @@ export class HttpServiceService {
       return of(result as T);
     };
   }
+
 
   public getFlowers(): Observable<FlowersType[]> {
     return this.httpClient.get<FlowersType[]>(this.url1).pipe(tap(() => console.log("Fetch Flowers")),
@@ -33,7 +38,7 @@ export class HttpServiceService {
     return this.httpClient.get<FlowersType>(url).pipe(
       tap(_ => console.log(`fetched flower id=${id}`)),
       catchError(this.handleError<FlowersType>(`getFlower id=${id}`))
-    );
+
   }
 
   public getPots(): Observable<PotsType[]> {
