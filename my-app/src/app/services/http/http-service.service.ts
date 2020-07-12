@@ -39,7 +39,7 @@ export class HttpServiceService {
     console.log(url);
     return this.httpClient.get<FlowersType>(url).pipe(
       tap(_ => console.log(`fetched flower id=${id}`)),
-      catchError(this.handleError<FlowersType>(`getFlower id=${id}`))
+      catchError(this.handleError<FlowersType>(`getFlower id=${id}`)))
 
   }
 
