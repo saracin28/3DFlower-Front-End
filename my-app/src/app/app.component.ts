@@ -1,16 +1,18 @@
-import {Component, Input} from '@angular/core';
-import {PotsType} from "./types/PotsType";
+import {Component, Input, OnInit} from '@angular/core';
+import {CartService} from "./services/cart/cart.service";
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'my-app';
-  @Input() pots: PotsType[];
-
-  ngOnInit(): void {
-
+  items;
+constructor(private cartService: CartService) {
+}
+  ngOnInit(): void{
+    this.items = this.cartService.getItems();
   }
 }
