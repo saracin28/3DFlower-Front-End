@@ -11,7 +11,7 @@
       <div class="cart">
         <a type="button" class="button-nav-horizontal" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
           <div class="cart-drop">
-            <p>Works</p>
+            <div *ngFor="let i of items">{{i.name}}  -  {{i.price}}lei</div>
           </div>
         </a>
       </div>
@@ -29,7 +29,7 @@
 <nav class="container2">
   <ul>
     <li><a type="button" class="button" routerLink="/our-products">Our Products</a></li>
-    <li><a type="button" class="button" routerLink="/flowers">Flowers</a></li>
+    <li><a type="button" class="button" routerLink="/flower">Flowers</a></li>
     <li><a type="button" class="button" routerLink="/pot">Pots</a></li>
     <li><a type="button" class="button" routerLink="/accessories">Accessories</a></li>
   </ul>
