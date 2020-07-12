@@ -19,7 +19,6 @@ export class PotComponent implements OnInit {
 
   ngOnInit() :void {
     this.httpService.getPots().subscribe(x => this.pots = x);
-
 }
 }
 

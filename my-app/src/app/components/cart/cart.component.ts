@@ -20,6 +20,4 @@ export class CartComponent implements OnInit {
     this.items = [];
     return this.items;
   }
-
-
 }

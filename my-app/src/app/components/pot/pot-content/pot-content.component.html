@@ -1,8 +1,6 @@
-<div *ngIf="loaded">
+<div *ngIf="pot">
   <h3>{{pot.name}}</h3>
-  <img src="{{pot.image}}">
-
+  <img src="{{pot.image}}"><br>
+  <div>{{pot.price}} lei</div>
+  <button (click)="addToCart(pot)">Add to cart</button>
 </div>
-
-
-

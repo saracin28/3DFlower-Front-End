@@ -6,7 +6,6 @@
   width: 200px;
   cursor: pointer;
   border-radius: 20px;
-  color: black;
 }
 
 .content:hover{
@@ -15,10 +14,7 @@
 }
 
 .content ul {
-  list-style-type: none; text-decoration: none;
-}
-.content li{
-  font-size: 15px;
+  list-style-type: none;
 }
 
 

@@ -1,17 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PotsType} from '../../../types/PotsType';
+import {FlowersType} from "../../../types/FlowersType";
 import {HttpServiceService} from "../../../services/http/http-service.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {CartService} from "../../../services/cart/cart.service";
+import {AccessoriesType} from "../../../types/AccessoriesType";
 
 @Component({
-  selector: 'app-pot-content',
-  templateUrl: './pot-content.component.html',
-  styleUrls: ['./pot-content.component.css']
+  selector: 'app-accessories-content',
+  templateUrl: './accessories-content.component.html',
+  styleUrls: ['./accessories-content.component.css']
 })
-export class PotContentComponent implements OnInit {
-  @Input() pot: PotsType;
-  loaded: boolean;
+export class AccessoriesContentComponent implements OnInit {
+  @Input() accessor: AccessoriesType;
 
   constructor(private httpService: HttpServiceService,
               private route: ActivatedRoute,
@@ -19,11 +19,9 @@ export class PotContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loaded = false;
     this.route.paramMap.subscribe((params: any) => {
-      this.httpService.getPot(params.get("id")).subscribe((x) => {
-        this.pot = x;
-        this.loaded = true;
+      this.httpService.getAccessor(params.get("id")).subscribe((x) => {
+        this.accessor = x;
       })
     });
   }
@@ -32,5 +30,4 @@ export class PotContentComponent implements OnInit {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
-
 }
