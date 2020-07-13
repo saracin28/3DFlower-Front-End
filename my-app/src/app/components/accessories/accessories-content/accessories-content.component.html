@@ -1,7 +1,7 @@
-<div *ngIf="accessor">
-  <h3>{{accessor.name}}</h3>
-  <img src="{{accessor.image}}"><br>
-  <div>{{accessor.price}} lei</div>
-  <button (click)="addToCart(accessor)">Add to cart</button>
+<div *ngIf="product">
+  <h3>{{product.name}}</h3>
+  <img src="{{product.image}}"><br>
+  <div>{{product.price}} lei</div>
+  <button (click)="addToCart(product)">Add to cart</button>
 </div>
 

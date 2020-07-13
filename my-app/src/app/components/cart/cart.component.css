@@ -1,0 +1,12 @@
+.shopCart {
+  margin-left: 20%;
+}
+
+table{
+  border: 2px solid;
+}
+
+.cancel-button{
+  background-color: gray;
+  border-radius: 20px;
+}

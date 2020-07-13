@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FlowersType} from "../../../types/FlowersType";
 import {HttpServiceService} from "../../../services/http/http-service.service";
 import {ActivatedRoute} from "@angular/router";
 import {CartService} from "../../../services/cart/cart.service";
+import {ProductType} from "../../../types/ProductType";
 
 @Component({
   selector: 'app-flower-content',
@@ -10,7 +10,7 @@ import {CartService} from "../../../services/cart/cart.service";
   styleUrls: ['./flower-content.component.css']
 })
 export class FlowerContentComponent implements OnInit {
-  @Input() flower: FlowersType;
+  @Input() product: ProductType;
 
   constructor(private httpService: HttpServiceService,
               private route: ActivatedRoute,
@@ -20,7 +20,7 @@ export class FlowerContentComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
       this.httpService.getFlower(params.get("id")).subscribe((x) => {
-        this.flower = x;
+        this.product = x;
       })
     });
   }

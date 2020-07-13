@@ -1,8 +1,19 @@
-<h3>Cart</h3>
-
-<div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price}} lei</span>
+<div class="shopCart">
+  <h3>Your ShopCart</h3>
+  <table>
+    <tr>
+      <th colspan="2">Products</th>
+      <th>Price</th>
+      <th>Cancel</th>
+    </tr>
+    <tr class="cart-item" *ngFor="let item of items">
+      <td><img src="{{item.image}}" width="40px" height="40px"></td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price}} lei</td>
+      <td>
+        <button class="cancel-button" (click)="removeOneElement(item.name)">X</button>
+      </td>
+    </tr>
+  </table>
+  <button (click)="clearCart()">Clear all</button>
 </div>
-
-<button (click)="clearCart()">Clear all</button>
