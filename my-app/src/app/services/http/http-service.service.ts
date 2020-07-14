@@ -1,5 +1,5 @@
 
-import {Injectable} from '@angular/core';
+import {Injectable, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, Observer, of} from "rxjs";
 import {catchError, tap} from "rxjs/operators";
@@ -10,10 +10,12 @@ import {ProductType} from "../../types/ProductType";
   providedIn: 'root'
 })
 export class HttpServiceService {
+  @Input() product: ProductType[];
 
   private url1 = "http://localhost:8080/flower";
   private url2 = "http://localhost:8080/pot";
   private url3 = "http://localhost:8080/accessories";
+
 
 
   constructor(private httpClient: HttpClient) {

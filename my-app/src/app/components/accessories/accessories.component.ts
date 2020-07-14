@@ -19,4 +19,5 @@ export class AccessoriesComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.getAccessories().subscribe(x => this.products = x);
   }
+
 }
