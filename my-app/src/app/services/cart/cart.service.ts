@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {ProductType} from "../../types/ProductType";
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,4 @@ export class CartService {
     this.items = this.items.filter(item => item.name !== name);
   }
 
-  constructor() { }
 }
