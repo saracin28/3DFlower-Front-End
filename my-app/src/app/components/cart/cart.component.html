@@ -3,16 +3,23 @@
   <table>
     <tr>
       <th colspan="2">Products</th>
+      <th>Quantity</th>
       <th>Price</th>
       <th>Cancel</th>
     </tr>
     <tr class="cart-item" *ngFor="let item of items">
       <td><img src="{{item.image}}" width="40px" height="40px"></td>
       <td>{{ item.name }}</td>
-      <td>{{ item.price}} lei</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}} lei</td>
       <td>
         <button class="cancel-button" (click)="removeOneElement(item.name)">X</button>
       </td>
+    </tr>
+    <tr>
+      <td colspan="3">Total</td>
+      <td>{{total}}</td>
+      <td></td>
     </tr>
   </table>
   <button (click)="clearCart()">Clear all</button>
