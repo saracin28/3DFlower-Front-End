@@ -17,5 +17,17 @@
   list-style-type: none;
 }
 
+h3{
+  color: maroon;
+  text-align: center;
+  font-size: 35px;
+  font-family: "Trebuchet MS";
+}
 
+.img{
+  display: inherit;
+  margin-left: 50px;
+  width: 35%;
+  image-resolution: inherit;
+}
 
