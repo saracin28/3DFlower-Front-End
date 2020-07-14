@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PotsType} from '../../types/PotsType';
 import {HttpServiceService} from '../../services/http/http-service.service';
+import {ProductType} from "../../types/ProductType";
 
 
 @Component({
@@ -9,7 +9,7 @@ import {HttpServiceService} from '../../services/http/http-service.service';
   styleUrls: ['./pot.component.css']
 })
 export class PotComponent implements OnInit {
-  @Input() pots: PotsType[];
+  @Input() product: ProductType[];
 
   constructor(private httpService: HttpServiceService) {
     this.windowOPen = false;
@@ -18,7 +18,7 @@ export class PotComponent implements OnInit {
   windowOPen: boolean;
 
   ngOnInit() :void {
-    this.httpService.getPots().subscribe(x => this.pots = x);
+    this.httpService.getPots().subscribe(x => this.product = x);
 }
 }
 

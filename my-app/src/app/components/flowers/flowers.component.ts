@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FlowersType} from "../../types/FlowersType";
 import {HttpServiceService} from "../../services/http/http-service.service";
+import {ProductType} from "../../types/ProductType";
 
 @Component({
   selector: 'app-flowers',
@@ -8,7 +8,7 @@ import {HttpServiceService} from "../../services/http/http-service.service";
   styleUrls: ['./flowers.component.css']
 })
 export class FlowersComponent implements OnInit {
-  @Input() flowers: FlowersType[];
+  @Input() product: ProductType[];
 
   constructor(private httpService: HttpServiceService) {
     this.windowOPen = false;
@@ -17,6 +17,6 @@ export class FlowersComponent implements OnInit {
   windowOPen: boolean;
 
   ngOnInit(): void {
-    this.httpService.getFlowers().subscribe(x => this.flowers = x);
+    this.httpService.getFlowers().subscribe(x => this.product = x);
   }
 }

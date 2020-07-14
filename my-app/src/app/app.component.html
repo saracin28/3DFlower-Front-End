@@ -6,14 +6,40 @@
     <img routerLink="home" class="emblem" src="assets/images/3DFlower.png" alt="emblem">
   </div>
   <div class="nav-horizontal">
-    <a type="button" class="button-nav-horizontal" routerLink="/login"><i class="fa fa-fw fa-user"></i></a>
-    <a type="button" class="button-nav-horizontal" routerLink="/home"><i class="fa fa-fw fa-home"></i></a>
+    <div style="display: inline-block">
+      <a type="button" class="button-nav-horizontal" routerLink="/login">
+        <mat-icon matBadge="15" matBadgeColor="warn" style="vertical-align: bottom">perm_identity</mat-icon>
+      </a>
+    </div>
+    <div style="display: inline-block">
+      <a type="button" class="button-nav-horizontal" routerLink="/home">
+        <mat-icon matBadge="15" matBadgeColor="warn" style="vertical-align: bottom">home</mat-icon>
+      </a>
+    </div>
     <div class="cart">
-      <a type="button" class="button-nav-horizontal" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
+      <a class="button-nav-horizontal" style="cursor: pointer">
+        <mat-icon matBadge="15" matBadgeColor="warn" style="vertical-align: bottom">shopping_cart</mat-icon>
         <div class="cart-drop">
-          <div *ngFor="let i of items">{{i.name}}  -  {{i.price}}lei</div>
+            <table >
+              <tr>
+                <th colspan="2">Name</th>
+                <th>Price</th>
+              </tr>
+              <tr *ngFor="let i of items">
+                <td><img src="{{i.image}}" width="40px" height="40px" style="border-radius: 10px"></td>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}lei</td>
+                <td>
+                  <button class="cancel-button" (click)="removeOneElement(i.name)">X</button>
+                </td>
+              </tr>
+            </table>
+          <a class="to-cart" type="button" routerLink="/cart">
+            <button>See cart!</button>
+          </a>
         </div>
       </a>
+
     </div>
   </div>
   <div class="search-container">

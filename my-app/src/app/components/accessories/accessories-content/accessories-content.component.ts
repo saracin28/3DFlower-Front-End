@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FlowersType} from "../../../types/FlowersType";
 import {HttpServiceService} from "../../../services/http/http-service.service";
 import {ActivatedRoute} from "@angular/router";
 import {CartService} from "../../../services/cart/cart.service";
-import {AccessoriesType} from "../../../types/AccessoriesType";
+import {ProductType} from "../../../types/ProductType";
 
 @Component({
   selector: 'app-accessories-content',
@@ -11,7 +10,7 @@ import {AccessoriesType} from "../../../types/AccessoriesType";
   styleUrls: ['./accessories-content.component.css']
 })
 export class AccessoriesContentComponent implements OnInit {
-  @Input() accessor: AccessoriesType;
+  @Input() product: ProductType;
 
   constructor(private httpService: HttpServiceService,
               private route: ActivatedRoute,
@@ -21,7 +20,7 @@ export class AccessoriesContentComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
       this.httpService.getAccessor(params.get("id")).subscribe((x) => {
-        this.accessor = x;
+        this.product = x;
       })
     });
   }

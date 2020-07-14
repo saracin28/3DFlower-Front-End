@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CartService} from "../../services/cart/cart.service";
-import {FlowersType} from "../../types/FlowersType";
 import {HttpServiceService} from "../../services/http/http-service.service";
-import {AccessoriesType} from "../../types/AccessoriesType";
+import {ProductType} from "../../types/ProductType";
 
 @Component({
   selector: 'app-accessories',
@@ -10,7 +8,7 @@ import {AccessoriesType} from "../../types/AccessoriesType";
   styleUrls: ['./accessories.component.css']
 })
 export class AccessoriesComponent implements OnInit {
-  @Input() accessories: AccessoriesType[];
+  @Input() products: ProductType[];
 
   constructor(private httpService: HttpServiceService) {
     this.windowOPen = false;
@@ -19,6 +17,6 @@ export class AccessoriesComponent implements OnInit {
   windowOPen: boolean;
 
   ngOnInit(): void {
-    this.httpService.getAccessories().subscribe(x => this.accessories = x);
+    this.httpService.getAccessories().subscribe(x => this.products = x);
   }
 }

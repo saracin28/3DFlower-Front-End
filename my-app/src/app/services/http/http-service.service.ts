@@ -2,10 +2,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, Observer, of} from "rxjs";
-import {FlowersType} from "../../types/FlowersType";
 import {catchError, tap} from "rxjs/operators";
-import {PotsType} from "../../types/PotsType";
-import {AccessoriesType} from "../../types/AccessoriesType";
+import {ProductType} from "../../types/ProductType";
 
 
 @Injectable({
@@ -29,46 +27,46 @@ export class HttpServiceService {
   }
 
 
-  public getFlowers(): Observable<FlowersType[]> {
-    return this.httpClient.get<FlowersType[]>(this.url1).pipe(tap(() => console.log("Fetch Flowers")),
-      catchError(this.handleError<FlowersType[]>("getFlowers", [])));
+  public getFlowers(): Observable<ProductType[]> {
+    return this.httpClient.get<ProductType[]>(this.url1).pipe(tap(() => console.log("Fetch Flowers")),
+      catchError(this.handleError<ProductType[]>("getFlowers", [])));
   }
 
-  public getFlower(id: number): Observable<FlowersType> {
+  public getFlower(id: number): Observable<ProductType> {
     const url = `${this.url1}/${id}`;
     console.log(url);
-    return this.httpClient.get<FlowersType>(url).pipe(
+    return this.httpClient.get<ProductType>(url).pipe(
       tap(_ => console.log(`fetched flower id=${id}`)),
-      catchError(this.handleError<FlowersType>(`getFlower id=${id}`)))
+      catchError(this.handleError<ProductType>(`getFlower id=${id}`)))
 
   }
 
-  public getPots(): Observable<PotsType[]> {
-    return this.httpClient.get<PotsType[]>(this.url2).pipe(tap(() => console.log("Fetch Pots")),
-      catchError(this.handleError<PotsType[]>("getPots", [])));
+  public getPots(): Observable<ProductType[]> {
+    return this.httpClient.get<ProductType[]>(this.url2).pipe(tap(() => console.log("Fetch Pots")),
+      catchError(this.handleError<ProductType[]>("getPots", [])));
   }
 
-  public getPot(id: number): Observable<PotsType> {
+  public getPot(id: number): Observable<ProductType> {
     const url = `${this.url2}/${id}`;
     console.log(url);
-    return this.httpClient.get<PotsType>(url).pipe(
+    return this.httpClient.get<ProductType>(url).pipe(
       tap(_ => console.log(`fetched pot id=${id}`)),
-      catchError(this.handleError<PotsType>(`getPot id=${id}`))
+      catchError(this.handleError<ProductType>(`getPot id=${id}`))
     );
   }
 
-  public getAccessories(): Observable<AccessoriesType[]> {
-    return this.httpClient.get<AccessoriesType[]>(this.url3).pipe(
+  public getAccessories(): Observable<ProductType[]> {
+    return this.httpClient.get<ProductType[]>(this.url3).pipe(
       tap(() => console.log("Fetch Accessories")),
-      catchError(this.handleError<AccessoriesType[]>("getAccessories", [])));
+      catchError(this.handleError<ProductType[]>("getAccessories", [])));
   }
 
-  public getAccessor(id: number): Observable<AccessoriesType> {
+  public getAccessor(id: number): Observable<ProductType> {
     const url = `${this.url3}/${id}`;
     console.log(url);
-    return this.httpClient.get<AccessoriesType>(url).pipe(
+    return this.httpClient.get<ProductType>(url).pipe(
       tap(_ => console.log(`fetched accessor id=${id}`)),
-      catchError(this.handleError<AccessoriesType>(`getAccessor id=${id}`))
+      catchError(this.handleError<ProductType>(`getAccessor id=${id}`))
     );
   }
 

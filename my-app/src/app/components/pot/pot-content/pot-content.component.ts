@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PotsType} from '../../../types/PotsType';
 import {HttpServiceService} from "../../../services/http/http-service.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CartService} from "../../../services/cart/cart.service";
+import {ProductType} from "../../../types/ProductType";
 
 @Component({
   selector: 'app-pot-content',
@@ -10,7 +10,7 @@ import {CartService} from "../../../services/cart/cart.service";
   styleUrls: ['./pot-content.component.css']
 })
 export class PotContentComponent implements OnInit {
-  @Input() pot: PotsType;
+  @Input() product: ProductType;
   loaded: boolean;
 
   constructor(private httpService: HttpServiceService,
@@ -22,7 +22,7 @@ export class PotContentComponent implements OnInit {
     this.loaded = false;
     this.route.paramMap.subscribe((params: any) => {
       this.httpService.getPot(params.get("id")).subscribe((x) => {
-        this.pot = x;
+        this.product = x;
         this.loaded = true;
       })
     });
