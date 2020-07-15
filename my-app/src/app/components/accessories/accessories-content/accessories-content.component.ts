@@ -11,6 +11,8 @@ import {ProductType} from "../../../types/ProductType";
 })
 export class AccessoriesContentComponent implements OnInit {
   @Input() product: ProductType;
+  quantity: number = 1;
+  i = 1;
 
   constructor(private httpService: HttpServiceService,
               private route: ActivatedRoute,
@@ -26,7 +28,23 @@ export class AccessoriesContentComponent implements OnInit {
   }
 
   addToCart(product) {
+    this.product.quantity=this.quantity;
     this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+  }
+
+
+
+  plus() {
+    if (this.i != 10) {
+      this.i++;
+      this.quantity = this.i;
+    }
+  }
+
+  minus(){
+    if(this.i !=1){
+      this.i--;
+      this.quantity = this.i;
+    }
   }
 }

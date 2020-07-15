@@ -11,6 +11,7 @@ import {ProductType} from "../../types/ProductType";
 export class PotComponent implements OnInit {
   @Input() product: ProductType[];
 
+
   constructor(private httpService: HttpServiceService) {
     this.windowOPen = false;
   }
