@@ -16,6 +16,7 @@ input {
   max-width: 50px;
 }
 
+<<<<<<< HEAD
 h3 {
   color: lightslategray;
   margin-left: 20px;
@@ -25,6 +26,8 @@ h3 {
   font-family: "Monotype Corsiva";
   font-size: 45px;
 }
+=======
+>>>>>>> 5be5797b37dfe18ec149f212acf5213294a0eb0d
 
 .img {
   margin-left: 50px;
@@ -53,4 +56,7 @@ h3 {
   font-size: 30px;
   border: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5be5797b37dfe18ec149f212acf5213294a0eb0d
