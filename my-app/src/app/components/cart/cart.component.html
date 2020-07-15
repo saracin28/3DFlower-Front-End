@@ -1,25 +1,25 @@
 <div class="shopCart">
-  <h3>Your ShopCart</h3>
-  <table>
+  <h1 style="font-size: xx-large"><b>Your ShopCart</b></h1>
+  <table rules=rows>
     <tr>
       <th colspan="2">Products</th>
       <th>Quantity</th>
       <th>Price</th>
-      <th>Cancel</th>
+      <th  style="width: 50px">Cancel</th>
     </tr>
     <tr class="cart-item" *ngFor="let item of items">
       <td><img src="{{item.image}}" width="40px" height="40px"></td>
       <td>{{ item.name }}</td>
-      <td>{{item.quantity}}</td>
-      <td>{{item.price}} lei</td>
-      <td>
-        <button class="cancel-button" (click)="removeOneElement(item.name)">X</button>
+      <td style="text-align: center">{{item.quantity}}</td>
+      <td style="text-align: right">{{item.price}} lei</td>
+      <td style="width: 50px; text-align: center">
+        <button class="cancel-button" (click)="removeOneElement(item)"><mat-icon>cancel</mat-icon></button>
       </td>
     </tr>
     <tr>
-      <td colspan="3">Total</td>
-      <td>{{total}}</td>
-      <td></td>
+      <td colspan="3" style="text-align: right">Total</td>
+      <td style="text-align: center">{{total}}</td>
+      <td style="width: 50px"></td>
     </tr>
   </table>
   <button (click)="clearCart()">Clear all</button>

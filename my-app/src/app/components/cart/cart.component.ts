@@ -10,32 +10,38 @@ import {ProductType} from "../../types/ProductType";
 })
 export class CartComponent implements OnInit {
   items;
-  total: number=0;
+  total: number = 0;
   product: ProductType;
 
   constructor(private cartService: CartService) {
-    for(let i=0;i<this.items;i++) {
-      this.total += parseInt(this.items.quantity[i]) + parseInt(this.items.price[i]);
-      console.log(this.items.quantity[i])
-      console.log(this.items.price[i])
-      console.log(this.total)
-    }
+
+
   }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
-
+    this.items.forEach(i => {
+        this.total += i.quantity * i.price;
+      }
+    )
   }
 
   clearCart() {
     this.items = [];
     this.cartService.clearCart();
+    this.total = 0;
     return this.items;
   }
 
-  removeOneElement(name) {
-    this.items = this.items.filter(item => item.name !== name);
-    this.cartService.removeOneElement(name);
+  removeOneElement(item) {
+    this.total = 0;
+    const i = this.items.indexOf(item);
+    if (i !== -1) {
+      this.items.splice(i, 1);
+    }
+    this.items.forEach(i => {
+        this.total += i.quantity * i.price;
+      }
+    )
   }
-
 }
