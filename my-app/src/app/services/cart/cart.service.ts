@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import {ProductType} from "../../types/ProductType";
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +19,11 @@ export class CartService {
     return this.items;
   }
 
-  removeOneElement(name){
-    this.items = this.items.filter(item => item.name !== name);
+  removeOneElement(item){
+    const i = this.items.indexOf(item);
+    if (i !== -1) {
+      this.items.splice(i, 1);
+    }
   }
 
 }

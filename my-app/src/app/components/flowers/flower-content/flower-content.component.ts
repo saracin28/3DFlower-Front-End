@@ -46,4 +46,5 @@ export class FlowerContentComponent implements OnInit {
       this.quantity = this.i;
     }
   }
+
 }

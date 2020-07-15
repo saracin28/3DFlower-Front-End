@@ -127,8 +127,8 @@
 }
 
 .cancel-button {
-  border-radius: 100px;
-  background-color: #696969;
+  background-color: white;
   cursor: pointer;
   margin-left: 50%;
+  border: none;
 }
