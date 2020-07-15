@@ -9,7 +9,7 @@
   border-radius: 20px;
   color: black;
   font-family: "Helvetica Neue";
-  background-color: lightgray;
+  background-color: whitesmoke;
 }
 
 .content:hover{
@@ -22,7 +22,7 @@
 }
 .content li{
   font-size: 15px;
-  color: maroon;
+  color: black;
 }
 
 
