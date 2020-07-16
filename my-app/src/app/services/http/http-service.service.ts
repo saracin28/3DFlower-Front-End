@@ -15,6 +15,7 @@ export class HttpServiceService {
   private url1 = "http://localhost:8080/flower";
   private url2 = "http://localhost:8080/pot";
   private url3 = "http://localhost:8080/accessories";
+  private url4 = "http://localhost:8080/ourProducts";
 
 
 
@@ -72,4 +73,18 @@ export class HttpServiceService {
     );
   }
 
+  public getOurProducts(): Observable<ProductType[]> {
+    return this.httpClient.get<ProductType[]>(this.url4).pipe(
+      tap(() => console.log("Fetch OurProducts")),
+      catchError(this.handleError<ProductType[]>("getOurProducts", [])));
+  }
+
+  public getOurProduct(id: number): Observable<ProductType> {
+    const url = `${this.url4}/${id}`;
+    console.log(url);
+    return this.httpClient.get<ProductType>(url).pipe(
+      tap(_ => console.log(`fetched OurProduct id=${id}`)),
+      catchError(this.handleError<ProductType>(`getOurProduct id=${id}`))
+    );
+  }
 }
