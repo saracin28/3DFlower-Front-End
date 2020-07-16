@@ -1,12 +1,27 @@
 .shopCart {
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
-table{
+table {
   border: 2px solid;
 }
 
-.cancel-button{
-  background-color: gray;
-  border-radius: 20px;
+th, td {
+  width: 300px;
+  height: 40px;
+  font-size: x-large;
+}
+
+th {
+  background-color: darkgrey;
+}
+
+.cancel-button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+img{
+  margin-left: 20px;
 }

@@ -2,11 +2,12 @@
   display: inline-block;
   margin-left: 70px;
   border: 2px solid;
-  height: 200px;
+  height: 300px;
   width: 200px;
   cursor: pointer;
   border-radius: 20px;
   color: black;
+  margin-bottom: 30px;
 }
 
 .content:hover{
@@ -15,7 +16,8 @@
 }
 
 .content ul {
-  list-style-type: none; text-decoration: none;
+  list-style-type: none;
+  text-decoration: none;
 }
 .content li{
   font-size: 15px;

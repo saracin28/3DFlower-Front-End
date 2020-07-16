@@ -1,6 +1,20 @@
 <div *ngIf="product">
-  <h3>{{product.name}}</h3>
-  <img src="{{product.image}}"><br>
-  <div>{{product.price}} lei</div>
-  <button (click)="addToCart(product)">Add to cart</button>
+  <div style="display: inline-block; width: 40%">
+    <img src="{{product.image}}" class="img" alt="accessories" width="410" height="360"><br>
+  </div>
+  <div style="display: inline-block; vertical-align: top">
+    <h3>{{product.name}}</h3>
+    <hr style="width: 500px; margin-top: 100px;">
+    <div class="price"> Price: {{product.price}} lei</div>
+    <hr style="width: 500px">
+    <div class="quantity">
+      <div style="font-size: xx-large; margin-bottom: 10px">Quantity:</div>
+      <button type="button" (click)="minus()">-</button>
+      <input type="text" [value]="quantity">
+      <button type="button" (click)="plus()">+</button>
+    </div>
+    <div style="display: inline-block; width: 40%; text-align: center">
+      <button class="cart" (click)="addToCart(product)">Add to cart</button>
+    </div>
+  </div>
 </div>

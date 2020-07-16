@@ -18,7 +18,7 @@
   color: black;
   text-decoration: none;
   font-size: 20px;
-  background-color: royalblue;
+  background-color: lightslategray;
   margin-left: 5px;
   border-radius: 50px;
 }
@@ -71,7 +71,7 @@
   display: block;
   font-size: 20px;
   text-decoration: none;
-  background-color: green;
+  background-color: lightslategray;
 }
 
 .button:hover {
@@ -127,8 +127,8 @@
 }
 
 .cancel-button {
-  border-radius: 100px;
-  background-color: #696969;
+  background-color: white;
   cursor: pointer;
   margin-left: 50%;
+  border: none;
 }

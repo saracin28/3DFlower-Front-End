@@ -1,27 +1,26 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HttpServiceService} from "../../../services/http/http-service.service";
 import {ActivatedRoute} from "@angular/router";
-import {CartService} from "../../../services/cart/cart.service";
+import {HttpServiceService} from "../../../services/http/http-service.service";
 import {ProductType} from "../../../types/ProductType";
+import {CartService} from "../../../services/cart/cart.service";
 
 @Component({
-  selector: 'app-flower-content',
-  templateUrl: './flower-content.component.html',
-  styleUrls: ['./flower-content.component.css']
+  selector: 'app-our-products-content',
+  templateUrl: './our-products-content.component.html',
+  styleUrls: ['./our-products-content.component.css']
 })
-export class FlowerContentComponent implements OnInit {
+export class OurProductsContentComponent implements OnInit {
   @Input() product: ProductType;
   quantity: number = 1;
   i = 1;
 
-  constructor(private httpService: HttpServiceService,
-              private route: ActivatedRoute,
-              private cartService: CartService) {
-  }
+  constructor(private route: ActivatedRoute,
+              private httpService: HttpServiceService,
+              private cartService: CartService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: any) => {
-      this.httpService.getFlower(params.get("id")).subscribe((x) => {
+      this.httpService.getOurProduct(params.get("id")).subscribe((x) => {
         this.product = x;
       })
     });
@@ -33,6 +32,7 @@ export class FlowerContentComponent implements OnInit {
   }
 
 
+
   plus() {
     if (this.i != 10) {
       this.i++;
@@ -40,8 +40,8 @@ export class FlowerContentComponent implements OnInit {
     }
   }
 
-  minus() {
-    if (this.i != 1) {
+  minus(){
+    if(this.i !=1){
       this.i--;
       this.quantity = this.i;
     }

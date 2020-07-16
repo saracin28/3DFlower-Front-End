@@ -18,9 +18,11 @@ export class AppComponent implements OnInit {
     this.items = this.cartService.getItems();
   }
 
-  removeOneElement(name){
-    this.items = this.items.filter(item => item.name !== name);
-    this.cartService.removeOneElement(name);
+  removeOneElement(item){
+    const i = this.items.indexOf(item);
+    if (i !== -1) {
+      this.items.splice(i, 1);
+    }
   }
 
 
