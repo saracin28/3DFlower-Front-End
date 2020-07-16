@@ -21,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
 import {FormsModule} from '@angular/forms';
 import { AccessoriesContentComponent } from './components/accessories/accessories-content/accessories-content.component';
+import { OurProductsContentComponent } from './components/our-products/our-products-content/our-products-content.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AccessoriesContentComponent } from './components/accessories/accessorie
     FlowersComponent,
     FlowerContentComponent,
     AccessoriesContentComponent,
+    OurProductsContentComponent,
 
   ],
   imports: [
