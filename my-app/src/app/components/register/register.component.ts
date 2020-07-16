@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +12,12 @@ export class RegisterComponent implements OnInit {
   showSpinner: any;
   email: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   register(): void {
-
   }
 }
