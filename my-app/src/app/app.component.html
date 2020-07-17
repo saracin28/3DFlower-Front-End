@@ -22,13 +22,15 @@
         <div class="cart-drop">
             <table >
               <tr>
-                <th colspan="2">Name</th>
+                <th colspan="2">Name  </th>
+                <th>Quantity  </th>
                 <th>Price</th>
               </tr>
               <tr *ngFor="let i of items">
                 <td><img src="{{i.image}}" width="40px" height="40px" style="border-radius: 10px"></td>
                 <td>{{i.name}}</td>
-                <td>{{i.price}}lei</td>
+                <td style="text-align: center">{{i.quantity}}</td>
+                <td style="text-align: right">{{i.price}}lei</td>
                 <td>
                   <button class="cancel-button" (click)="removeOneElement(i)"><mat-icon>cancel</mat-icon></button>
                 </td>
