@@ -22,6 +22,8 @@ import { CustomMaterialModule } from './material.module';
 import {FormsModule} from '@angular/forms';
 import { AccessoriesContentComponent } from './components/accessories/accessories-content/accessories-content.component';
 import { OurProductsContentComponent } from './components/our-products/our-products-content/our-products-content.component';
+import {ConfirmEqualValidatorDirective} from "./components/register/confirm-equal-validator.directive";
+import {UniqueUsernameDirective} from "./components/register/unique-username.directive";
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { OurProductsContentComponent } from './components/our-products/our-produ
     FlowerContentComponent,
     AccessoriesContentComponent,
     OurProductsContentComponent,
-
+    ConfirmEqualValidatorDirective,
+    UniqueUsernameDirective
   ],
   imports: [
     BrowserModule,
