@@ -122,7 +122,6 @@
 
 .to-cart button :hover {
   background-color: gray;
-  color: white;
   transition: 0.2s;
 }
 

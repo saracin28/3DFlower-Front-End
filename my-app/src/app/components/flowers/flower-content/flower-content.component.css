@@ -53,4 +53,5 @@ h3 {
   border-radius: 20px;
   font-size: 30px;
   border: none;
+  cursor: pointer;
 }

@@ -3,37 +3,58 @@
     <mat-card-title>Register</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form class="register-form">
+    <form class="register-form" #userForm="ngForm">
       <table class="register-full-width" cellspacing="0">
         <tr>
           <td>
             <mat-form-field class="register-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <input matInput placeholder="Username" [(ngModel)]="newUser.username" #user="ngModel" name="username"
+                     required uniqueUsername>
+              <span style="color: red" *ngIf="user.invalid && (user.dirty || user.touched)">
+              **UserName already exists!
+              </span>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="register-full-width">
-              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+              <input matInput placeholder="Email" [(ngModel)]="newUser.email" #email="ngModel" email name="email"
+                     required>
+              <span style="color: red" *ngIf="email.touched && email.invalid">
+              **Email is invalid!
+              </span>
             </mat-form-field>
           </td>
         </tr>
         <tr>
-          <td><mat-form-field class="register-full-width">
-            <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-          </mat-form-field></td>
+          <td>
+            <mat-form-field class="register-full-width"
+                            [class.has-errors]="password.touched && password.invalid">
+              <input matInput placeholder="Password"
+                     [(ngModel)]="newUser.password" type="password" #password="ngModel" name="password"
+                     required>
+            </mat-form-field>
+          </td>
         </tr>
         <tr>
-          <td><mat-form-field class="register-full-width">
-            <input matInput placeholder="Confirm password" [(ngModel)]="ConfirmPassword"type="password" name="password" required>
-          </mat-form-field></td>
+          <td>
+            <mat-form-field class="register-full-width"
+                            [class.has-errors]="confirmPassword.touched && confirmPassword.invalid">
+              <input matInput placeholder="Confirm password" appConfirmEqualValidator="password"
+                     [(ngModel)]="newUser.ConfirmPassword" #confirmPassword="ngModel" type="password"
+                     name="confirmPassword" required>
+              <span style="color: red" *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual">
+              **Password and Confirm password does not match!
+              </span>
+            </mat-form-field>
+          </td>
         </tr>
       </table>
     </form>
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="register()" color="primary">Submit</button>
+    <button mat-raised-button (click)="createUser()" [disabled]="userForm.invalid" color="primary">Submit</button>
   </mat-card-actions>
 </mat-card>
