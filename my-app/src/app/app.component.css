@@ -113,16 +113,18 @@
 }
 
 .to-cart button {
-  margin-left: 60%;
   border: none;
-  font-size: 15px;
-  background-color: aqua;
+  background-color: royalblue;
   cursor: pointer;
+  width: 100%;
+  height: 30px;
+  font-size: x-large;
+  color: white;
 }
 
-.to-cart button :hover {
+.to-cart button:hover {
   background-color: gray;
-  transition: 0.2s;
+  transition: 1s;
 }
 
 .cancel-button {

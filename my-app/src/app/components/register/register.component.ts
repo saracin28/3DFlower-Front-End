@@ -9,7 +9,7 @@ import {RegistersType} from "../../types/RegistersType";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  newUser= new RegistersType();
+  newUser = new RegistersType();
   showSpinner: any;
 
 
@@ -17,12 +17,15 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
   }
+
   createUser(): void {
-      this.httpService.postUser(this.newUser)
-        .subscribe(data => {
-          alert("User created successfully.");
-        });
+    this.httpService.postUser(this.newUser)
+      .subscribe(data => {
+        alert("User created successfully.");
+      });
   }
 
 }

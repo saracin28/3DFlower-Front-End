@@ -8,9 +8,9 @@
         <tr>
           <td>
             <mat-form-field class="register-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="newUser.username" #user="ngModel" name="username"
-                     required uniqueUsername>
-              <span style="color: red" *ngIf="user.invalid && (user.dirty || user.touched)">
+              <input matInput placeholder="Username" [(ngModel)]="newUser.username" #userName="ngModel" name="username"
+                     required alreadyExist>
+              <span style="color: red" *ngIf="userName.invalid && (userName.dirty || userName.touched)" >
               **UserName already exists!
               </span>
             </mat-form-field>
@@ -29,18 +29,16 @@
         </tr>
         <tr>
           <td>
-            <mat-form-field class="register-full-width"
-                            [class.has-errors]="password.touched && password.invalid">
+            <mat-form-field class="register-full-width">
               <input matInput placeholder="Password"
-                     [(ngModel)]="newUser.password" type="password" #password="ngModel" name="password"
+                     [(ngModel)]="newUser.password" type="password" name="password"
                      required>
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
-            <mat-form-field class="register-full-width"
-                            [class.has-errors]="confirmPassword.touched && confirmPassword.invalid">
+            <mat-form-field class="register-full-width">
               <input matInput placeholder="Confirm password" appConfirmEqualValidator="password"
                      [(ngModel)]="newUser.ConfirmPassword" #confirmPassword="ngModel" type="password"
                      name="confirmPassword" required>

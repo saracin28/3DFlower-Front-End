@@ -101,7 +101,7 @@ export class HttpServiceService {
   }
 
   public getUserByName(name: string): Observable<any> {
-    const url = `${this.url6}/${name}`;
+    const url = `${this.url6}?name=${name}`;
     console.log(url);
     return this.httpClient.get<any>(url).pipe(
       tap(_ => console.log(`fetched user name=${name}`)),
