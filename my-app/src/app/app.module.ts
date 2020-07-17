@@ -19,7 +19,7 @@ import { FlowerContentComponent } from './components/flowers/flower-content/flow
 import {HttpServiceService} from './services/http/http-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomMaterialModule } from './material.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AccessoriesContentComponent } from './components/accessories/accessories-content/accessories-content.component';
 import { OurProductsContentComponent } from './components/our-products/our-products-content/our-products-content.component';
 import {ConfirmEqualValidatorDirective} from "./components/register/confirm-equal-validator.directive";
@@ -52,6 +52,7 @@ import {UniqueUsernameDirective} from "./components/register/unique-username.dir
     HttpClientModule,
     CustomMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [HttpServiceService],
   bootstrap: [AppComponent]

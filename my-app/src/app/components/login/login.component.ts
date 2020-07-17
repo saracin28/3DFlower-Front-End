@@ -1,5 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {RegistersType} from '../../types/RegistersType';
+import {HttpServiceService} from '../../services/http/http-service.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +10,72 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) {
-  }
-
+  @Input() user: RegistersType;
+  form: FormGroup;
+  public loginInvalid: boolean;
+  private formSubmitAttempt: boolean;
+  private returnUrl: string;
   username: any;
   password: any;
   showSpinner: any;
 
-  ngOnInit(): void {
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
   }
 
-  login(): void {
-    if (this.username === 'admin' && this.password === 'admin') {
-      this.router.navigate(['user']);
+  ngOnInit(): void {
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl;
+    this.form = this.fb.group({
+      username: ['', Validators.email],
+      password: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    this.loginInvalid = false;
+    this.formSubmitAttempt = false;
+    if (this.form.valid) {
+      try {
+        this.username = this.form.get('username').value;
+        this.password = this.form.get('password').value;
+      } catch (err) {
+        this.loginInvalid = true;
+      }
     } else {
-      alert('Invalid credentials');
+      this.formSubmitAttempt = true;
     }
   }
+
+  login() {
+  }
 }
+
+
+//   constructor(private router: Router, private route: ActivatedRoute, private httpService: HttpServiceService
+//   ) {
+//   }
+//
+//   username: any;
+//   password: any;
+//   showSpinner: any;
+//
+//   ngOnInit(): void {
+//   this.route.paramMap.subscribe((params: any) => {
+//   this.httpService.getUserByName(params.get('user')).subscribe((x) => {
+//   this.user = x;
+// });
+// });
+// }
+//
+//
+//   login(): void {
+//     if (this.username) {
+//       this.router.navigate(['user']);
+//     } else {
+//       alert('Invalid credentials');
+//     }
+//   }
+// }
