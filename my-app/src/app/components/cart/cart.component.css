@@ -22,6 +22,15 @@ th {
   border: none;
 }
 
-img{
+img {
   margin-left: 20px;
+}
+
+.clearAll {
+  border: 2px solid black;
+  background-color: red;
+  color: white;
+  font-size: x-large;
+  margin-left: 84%;
+  cursor: pointer;
 }
