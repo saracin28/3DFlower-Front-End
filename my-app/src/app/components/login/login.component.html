@@ -1,4 +1,4 @@
-<mat-card class="login-card">
+<mat-card class="login-card" >
   <mat-card-header>
     <mat-card-title>Login</mat-card-title>
   </mat-card-header>
@@ -8,17 +8,14 @@
         <tr>
           <td>
             <mat-form-field class="login-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" #userName="ngModel" name="username" required >
-              <span style="color: red" *ngIf="userName.invalid && (userName.dirty || userName.touched)" >
-              **UserName does not exists!
-              </span>
+              <input matInput placeholder="Username" [(ngModel)]="username" #name="ngModel" name="username" required >
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field class="login-full-width">
-              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+              <input matInput placeholder="Password" [(ngModel)]="password" #pass="ngModel" type="password" name="password" required>
             </mat-form-field>
           </td>
         </tr>
@@ -27,9 +24,11 @@
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <button mat-raised-button (click)="doLogin()" color="primary">Login</button>
   </mat-card-actions>
   <mat-card>
     <p> Don't have an account? <a class="button-nav-horizontal" routerLink="/register">Click here!</a></p>
   </mat-card>
 </mat-card>
+
+

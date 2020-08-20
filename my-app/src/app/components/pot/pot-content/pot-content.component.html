@@ -15,7 +15,7 @@
       <button type="button" (click)="plus()">+</button>
     </div>
     <div style="display: inline-block; width: 40%; text-align: center">
-      <button class="cart" (click)="addToCart(product)">Add to cart</button>
+      <button class="cart" (click)="addToCart(product); addCartToDataBase(cart)">Add to cart</button>
     </div>
   </div>
 </div>

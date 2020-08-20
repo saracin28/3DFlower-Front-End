@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from "../../services/cart/cart.service";
 import {ActivatedRoute} from "@angular/router";
 import {ProductType} from "../../types/ProductType";
+import {HttpServiceService} from "../../services/http/http-service.service";
+import {LoginService} from "../../services/login/login.service";
 
 @Component({
   selector: 'app-cart',
@@ -13,9 +15,8 @@ export class CartComponent implements OnInit {
   total: number = 0;
   product: ProductType;
 
-  constructor(private cartService: CartService) {
-
-
+  constructor(private cartService: CartService,
+              private httpService: HttpServiceService) {
   }
 
   ngOnInit(): void {
@@ -39,9 +40,15 @@ export class CartComponent implements OnInit {
     if (i !== -1) {
       this.items.splice(i, 1);
     }
+    this.httpService.deleteCart(item.id).subscribe(()=>
+      console.log("Cart Deleted"));
     this.items.forEach(i => {
         this.total += i.quantity * i.price;
       }
     )
+  }
+
+  removeElementFromDB(){
+
   }
 }

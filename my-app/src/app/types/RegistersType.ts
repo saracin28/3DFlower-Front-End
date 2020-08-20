@@ -3,6 +3,5 @@ export class RegistersType {
   ConfirmPassword: string;
   username: string;
   email: string;
-
 }
 
