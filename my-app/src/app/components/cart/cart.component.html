@@ -13,7 +13,7 @@
       <td style="text-align: center">{{item.quantity}}</td>
       <td style="text-align: right">{{item.price}} lei</td>
       <td style="width: 50px; text-align: center">
-        <button class="cancel-button" (click)="removeOneElement(item)"><mat-icon>cancel</mat-icon></button>
+        <button class="cancel-button" (click)="removeOneElement(item); removeElementFromDB()"><mat-icon>cancel</mat-icon></button>
       </td>
     </tr>
     <tr>

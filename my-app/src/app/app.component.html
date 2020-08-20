@@ -3,13 +3,17 @@
 
 <div class="header">
   <div style="display: inline-block">
-    <img routerLink="home" class="emblem" src="assets/images/3DFlower.png" alt="emblem">
+    <img routerLink="home" class="emblem" src="assets/images/Logo.PNG" alt="emblem">
   </div>
   <div class="nav-horizontal">
-    <div style="display: inline-block">
-      <a type="button" class="button-nav-horizontal" routerLink="/login">
+    <div style="display: inline-block" class="user">
+      <a type="button" class="button-nav-horizontal" routerLink="/login" id="login-button">
         <mat-icon matBadge="15" matBadgeColor="warn" style="vertical-align: bottom">perm_identity</mat-icon>
       </a>
+      <div class="user-drop" *ngIf="login.loggedIn">
+        <span>You are Logged In as <b>{{login.getUserName()}}</b></span><br>
+        <button class="logOut" (click)="login.logOut()">LogOut</button>
+      </div>
     </div>
     <div style="display: inline-block">
       <a type="button" class="button-nav-horizontal" routerLink="/home">
@@ -20,22 +24,24 @@
       <a class="button-nav-horizontal" style="cursor: pointer">
         <mat-icon matBadge="15" matBadgeColor="warn" style="vertical-align: bottom">shopping_cart</mat-icon>
         <div class="cart-drop">
-            <table >
-              <tr>
-                <th colspan="2">Name  </th>
-                <th>Quantity  </th>
-                <th>Price</th>
-              </tr>
-              <tr *ngFor="let i of items">
-                <td><img src="{{i.image}}" width="40px" height="40px" style="border-radius: 10px"></td>
-                <td>{{i.name}}</td>
-                <td style="text-align: center">{{i.quantity}}</td>
-                <td style="text-align: right">{{i.price}}lei</td>
-                <td>
-                  <button class="cancel-button" (click)="removeOneElement(i)"><mat-icon>cancel</mat-icon></button>
-                </td>
-              </tr>
-            </table>
+          <table>
+            <tr>
+              <th colspan="2">Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+            <tr *ngFor="let i of items">
+              <td><img src="{{i.image}}" width="40px" height="40px" style="border-radius: 10px"></td>
+              <td>{{i.name}}</td>
+              <td style="text-align: center">{{i.quantity}}</td>
+              <td style="text-align: right">{{i.price}}lei</td>
+              <td>
+                <button class="cancel-button" (click)="removeOneElement(i)">
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </table>
           <a class="to-cart" type="button" routerLink="/cart">
             <button>See cart!</button>
           </a>
